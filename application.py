@@ -161,5 +161,5 @@ def search_route():
     return render_template('index.html', search=1, search_results=search_results)
 
 
-if __name__ == '__main__':
-    app.run(debug=True, port=3001)
+# if __name__ == '__main__':
+#     app.run(debug=True, port=3001)
