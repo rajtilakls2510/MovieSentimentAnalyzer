@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <title>Movie Sentiment Analyzer</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body class="bg-dark">
+<div class="container">
+    <div class="row">
+        <div class="card mt-50" style="width: 100%; height: 100%">
+            <div class="card-header" style="text-align: center">
+                <h1>Welcome to Movie Sentiment Analyzer</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12" style="text-align: center">
+                        <h3>Please consider searching for a movie </h3>
+                        <span>(If the required movie does not come up, you can consider searching again)</span>
+                    </div>
+                </div>
+                <br>
+                <form method="post" action="/search">
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" name="search" id="search" class="form-control" required="1"
+                                   placeholder="Enter Movie Name">
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-success" value="Search">
+                </form>
+                <br>
+
+                {% if search==1 %}
+
+                <div class="row">
+                    <div class="col-12" style="text-align: center">
+                        <h5><u>Search Results</u></h5>
+                    </div>
+                </div>
+                {% if search_results|length != 0 %}
+                <div class="row">
+                    <div class="card" style="width: 100%; height: 100%">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>IMDB Id</th>
+                                        <th>Name</th>
+                                        <th>Year</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    {% for movie in search_results %}
+                                    <tr>
+                                        <td><a href="/movie?movie_id={{ movie.0 }}">{{ movie.0 }}</a></td>
+                                        <td><a href="/movie?movie_id={{ movie.0 }}">{{ movie.1 }}</a></td>
+                                        <td>{{ movie.2 }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {% else %}
+                <div class="row">
+                    <div class="card" style="width: 100%; height: 100%">
+                        <div class="card-body">
+                            <span>Sorry! No Movies Found. Try Again</span>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="card " style="width: 100%; height: 100%;margin-top: 20px;">
+            <div class="row">
+                <div class="col-12" style="text-align: center">
+                    <h4>By Rajtilak Pal </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
