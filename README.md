@@ -43,7 +43,7 @@ And you are good to go.
 <img src="https://github.com/rajtilakls2510/MovieSentimentAnalyzer/blob/master/demo_image.png">
 
 4. Those reviews are classified into positive and negative sentiment. Positive reviews are placed in Green Card and the negative ones are placed in Red Card.
-5. It also gives you a rating in 10 on the basis of the number of positive reviews.
+5. It also gives you a rating in 10 on the basis of the number of positive reviews on the top right hand corner of the page
 
 #### How it works?
 
