@@ -3,7 +3,7 @@
 
 <img src="https://github.com/rajtilakls2510/MovieSentimentAnalyzer/blob/master/demo_image.png">
 
-Video Demostration: 
+Video Demostration: https://youtu.be/a9bWqw5aLa4
 
 Project Link : https://movie-sentiment-analyzer.herokuapp.com
 
