@@ -40,7 +40,8 @@ And you are good to go.
 
 3. You select one of them and it gives you back a page where there are different reviews from the IMDB website.
 
-<img src="https://github.com/rajtilakls2510/MovieSentimentAnalyzer/blob/master/search.png">
+<img src="https://github.com/rajtilakls2510/MovieSentimentAnalyzer/blob/master/demo_image.png">
+
 4. Those reviews are classified into positive and negative sentiment. Positive reviews are placed in Green Card and the negative ones are placed in Red Card.
 5. It also gives you a rating in 10 on the basis of the number of positive reviews.
 
